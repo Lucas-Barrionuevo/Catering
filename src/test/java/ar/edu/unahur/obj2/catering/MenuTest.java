@@ -16,6 +16,8 @@ class MenuTest {
     @Test
     void dadoUnMenuConDescuentoMayorACien_alCrearlo_lanzaDescuentoInvalidoException() {
         assertThrows(DescuentoInvalidoException.class,
+                () -> new Menu("Descuento negativo", -1));
+        assertThrows(DescuentoInvalidoException.class,
                 () -> new Menu("Descuento excesivo", 101));
     }
 

@@ -1,7 +1,7 @@
 package ar.edu.unahur.obj2.catering.excepciones;
 
 public class PrecioNegativoException extends RuntimeException {
-    // Es no chequeada: un precio negativo es un dato inválido al crear el servicio.
+    // Excepción no verificada: quien crea el servicio debe corregir el precio negativo.
     public PrecioNegativoException(double precio) {
         super("El precio del servicio no puede ser negativo: " + precio);
     }

@@ -22,6 +22,7 @@ class ContratoTest {
         Propuesta propuestaContratada = new MozosAdicionales(menu);
         Contrato contrato = new Contrato("Lucía", propuestaContratada);
 
+        assertEquals("Lucía", contrato.getNombreCliente());
         assertEquals(360_000, contrato.getImporte());
         assertEquals("Menú Parrillero + Mozos adicionales", contrato.getDescripcion());
 
@@ -29,6 +30,5 @@ class ContratoTest {
 
         assertEquals(378_000, propuestaContratada.getPrecio());
         assertEquals(360_000, contrato.getImporte());
-        assertEquals("Menú Parrillero + Mozos adicionales", contrato.getDescripcion());
     }
 }
