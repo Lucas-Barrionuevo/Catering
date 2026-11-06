@@ -5,7 +5,6 @@ import ar.edu.unahur.obj2.catering.propuestas.Propuesta;
 import ar.edu.unahur.obj2.catering.propuestas.Servicio;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class Catalogo {
     private final List<Propuesta> propuestas;
@@ -47,13 +46,6 @@ public class Catalogo {
         propuestas.add(packFiesta);
         propuestas.add(eventoCompleto);
         return new Catalogo(propuestas);
-    }
-
-    public Propuesta buscar(String nombre) {
-        Optional<Propuesta> propuesta = propuestas.stream()
-                .filter(item -> item.getDescripcion().equals(nombre))
-                .findFirst();
-        return propuesta.orElse(null);
     }
 
     public List<Propuesta> getPropuestas() {

@@ -4,7 +4,7 @@ import ar.edu.unahur.obj2.catering.excepciones.PrecioNegativoException;
 
 public class Servicio implements Propuesta {
     private final String nombre;
-    private final double precio;
+    private double precio;
 
     public Servicio(String nombre, double precio) {
         if (precio < 0) {
@@ -14,8 +14,11 @@ public class Servicio implements Propuesta {
         this.precio = precio;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void actualizarPrecio(double precio) {
+        if (precio < 0) {
+            throw new PrecioNegativoException(precio);
+        }
+        this.precio = precio;
     }
 
     @Override
